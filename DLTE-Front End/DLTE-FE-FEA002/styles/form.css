@@ -1,0 +1,14 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: aliceblue;
+    justify-content: center;
+    display: flex;
+}
+.title{
+    text-align: center;
+    color: purple;
+}
+.child{
+    align-self: center;
+}
