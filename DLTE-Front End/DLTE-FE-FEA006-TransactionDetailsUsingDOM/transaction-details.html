@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-6">Transaction Details:</h1>
+        <!-- This stable displays the transaction details -->
+        <table class="table">
+            <thead>
+              <tr>
+                <th>Transaction ID</th>
+                <th>Transaction Mode</th>
+                <th>Transaction Type</th>
+                <th>Transaction Date</th>
+                <th>Amount</th>
+                <th>Recipient</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="tID"></th>
+                <td id="mode"></td>
+                <td id="type"></td>
+                <td id="date"></td>
+                <td id="amount"></td>
+                <td id="recep"></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    
+    <script>
+        // Creation of variables
+        let transID, tMode, tType, tDate, tAmount, recep;
+
+        // Assigning the input from the user to the variables
+        transID = prompt("Enter the transaction ID:","")
+        tMode = prompt("Enter the mode of transaction:","")
+        tType = prompt("Enter the transaction type:","")
+        tDate = prompt("Enter the date:","")
+        tAmount = prompt("Enter the amount:","")
+        recep = prompt("Enter the recipient:","")
+        
+        //The values are written into the form using innerHTML
+        document.getElementById("tID").innerHTML= transID;
+        document.getElementById("mode").innerHTML= tMode;
+        document.getElementById("type").innerHTML= tType;
+        document.getElementById("date").innerHTML= tDate;
+        document.getElementById("amount").innerHTML= tAmount;
+        document.getElementById("recep").innerHTML= recep;
+    </script>  
+</body>
+</html>
