@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <!-- jQuery script to calculate tax -->
+    <script>
+        $(document).ready(() => {
+            $("#calBtn").click(() => {
+                let cname = $("#nam").val();
+                let cprof = $("select[name='prof']").val();
+                let salary = $(".sal").val();
+                let tax = 0;
+                if(cprof=="Self Employed"){
+                    if(salary<700000){
+                        tax = 0;
+                    }
+                    else if(salary>=700000 && salary<900000){
+                       tax = salary*0.10;
+
+                    }
+                    else if(salary>=900000 && salary<1200000){
+                        tax = salary*0.15;
+                    }
+                    else if(salary>=1200000 && salary<1500000){
+                        tax = salary*0.20;
+                    }
+                    else if(salary>=1500000){
+                        tax = salary*0.30;
+                    }
+                }
+                else if(cprof=="Employee"){
+                    if(salary<700000){
+                        tax = 0;
+                    }
+                    else if(salary>=700000 && salary<900000){
+                       tax = salary*0.10;
+
+                    }
+                    else if(salary>=900000 && salary<1200000){
+                        tax = salary*0.15;
+                    }
+                    else if(salary>=1200000 && salary<1500000){
+                        tax = salary*0.20;
+                    }
+                    else if(salary>=1500000){
+                        tax = salary*0.30;
+                    }
+                }
+                else if(cprof=="Business"){
+                    if(salary<300000){
+                        tax = 0;
+                    }
+                    else if(salary>=300000 && salary<600000){
+                       tax = salary*0.05;
+
+                    }
+                    else if(salary>=600000 && salary<900000){
+                        tax = salary*0.10;
+                    }
+                    else if(salary>=900000 && salary<1200000){
+                        tax = salary*0.15;
+                    }
+                    else if(salary>=1200000 && salary<1500000){
+                        tax = salary*0.20;
+                    }
+                    else if(salary>=1500000){
+                        tax = salary*0.20;
+                    }
+                }
+                // Display the Result
+                $("output").html(cname+", "+cprof+" with the salary of Rs."+salary+" must pay Rs."+tax+" as tax").attr("class","mt-2 card p-3 bg-success-subtle");
+
+            });
+        })
+    </script>
+    <div class="container">
+        <div class="card mt-3 p-1 d-flex" style="background-color: #00cc66;">
+            <!-- Title -->
+            <div class="d-flex justify-content-center">
+                <span class="display-6 text-light">Tax Calculator</span>
+            </div>
+          
+        </div>
+        <!-- A Form that takes input from the user -->
+        <div class="mt-2 card p-3 bg-light">
+            <form name="tax">
+                <div class=" mb-3">
+                  <label class="form-label">Name</label>
+                  <input type="text" class="form-control"  id="nam">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Profession</label>
+                  <select class="form-select" aria-label="Default select example" name="prof">
+                    <option selected>Choose</option>
+                    <option value="Self Employed">Self Employeed</option>
+                    <option value="Employee">Employee</option>
+                    <option value="Business">Business</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Salary</label>
+                    <input type="number" class="sal form-control">
+                  </div> 
+            </form>
+            <button class="btn btn-primary" id="calBtn">Calculate</button>
+        </div>
+        <output></output>
+</body>
+</html>
