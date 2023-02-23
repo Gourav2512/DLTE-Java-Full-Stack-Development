@@ -36,6 +36,19 @@ class Customer{
     private Integer cibil;
     private String contact;
 
+    //Default Constructor
+    public Customer() {}
+
+    //Parameterised constructor
+    public Customer(String name, String pan, String aadhaar, String profession, Integer cibil, String contact) {
+        this.name = name;
+        this.pan = pan;
+        this.aadhaar = aadhaar;
+        this.profession = profession;
+        this.cibil = cibil;
+        this.contact = contact;
+    }
+
     //Getter methods
     String getName(){
         return this.name;
