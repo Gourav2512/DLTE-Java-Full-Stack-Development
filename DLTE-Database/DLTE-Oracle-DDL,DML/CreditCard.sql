@@ -15,7 +15,7 @@ insert into CreditCard values(7465787654345654,'Saitama',7645,'05-30-2024',25000
 insert into CreditCard values(6754567898789098,'John',5432,'07-27-2025',150000);
 insert into CreditCard values(6754567898789098,'Madara',9870,'04-18-2023',100000);
 insert into CreditCard values(6574563456434567,'Itachi',7657,'02-20-2026',200000);
-insert into CreditCard values(456798907656,'Nagato',3457,'05-21-2024',150000);
+insert into CreditCard values(4567989076566789,'Nagato',3457,'05-21-2024',150000);
 
 --Updating expiry date for some records
 update CreditCard set card_expiry='03-26-2027' where card_holder='Levi';
