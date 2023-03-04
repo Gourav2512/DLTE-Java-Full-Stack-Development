@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a99a73fd-9670-4a73-88b2-b5070b33e149" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV010-GenericsWithStrings/DLTE-Java-JV010-GenericsWithStrings.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV011-TransactionCollection/DLTE-Java-JV011-TransactionCollection.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/DLTE-Java-JV014-CreditCardDash-ConsoleApplication.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/src/main/java/org/ex/abc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/src/main/java/org/example/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/src/main/java/org/example/CreditCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/src/main/java/org/example/CreditEvents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Oracle-DDL,DML/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Oracle-DDL,DML/.idea/DLTE-Oracle-DDL,DML.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Oracle-DDL,DML/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Oracle-DDL,DML/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Oracle-DDL,DML/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Oracle-DDL,DML/CreditCard.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Oracle-DDL,DML/screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV001-PersonalLoanCalculator/target/classes/META-INF/DLTE-Java-JV001-PersonalLoanCalculator.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV001-PersonalLoanCalculator/target/classes/org/example/PersonLoan.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV001-PersonalLoanCalculator/target/classes/org/example/PersonLoan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV001-PersonalLoanCalculator/target/test-classes/org/example/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV001-PersonalLoanCalculator/target/test-classes/org/example/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV002-FindNChargesLessMinimumBalance/target/classes/org/example/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV002-FindNChargesLessMinimumBalance/target/classes/org/example/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV002-FindNChargesLessMinimumBalance/target/classes/org/example/MinimumBalance.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV002-FindNChargesLessMinimumBalance/target/classes/org/example/MinimumBalance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV002-FindNChargesLessMinimumBalance/target/test-classes/org/example/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV002-FindNChargesLessMinimumBalance/target/test-classes/org/example/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV003-ImplementEncapsulation/target/classes/basic/dlte/javapart/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV003-ImplementEncapsulation/target/classes/basic/dlte/javapart/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV003-ImplementEncapsulation/target/classes/basic/dlte/javapart/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV003-ImplementEncapsulation/target/classes/basic/dlte/javapart/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV003-ImplementEncapsulation/target/classes/basic/dlte/javapart/Loan.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV003-ImplementEncapsulation/target/classes/basic/dlte/javapart/Loan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV003-ImplementEncapsulation/target/test-classes/basic/dlte/javapart/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV003-ImplementEncapsulation/target/test-classes/basic/dlte/javapart/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV004-ConsoleGPay/target/classes/org/example/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV004-ConsoleGPay/target/classes/org/example/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV004-ConsoleGPay/target/classes/org/example/Gpay.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV004-ConsoleGPay/target/classes/org/example/Gpay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Java005-Inheritance/src/main/java/org/example/SmsBanking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Java005-Inheritance/src/main/java/org/example/SmsBanking.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="SYSTEM: schema" type="3abd1b6a:OraImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="SYSTEM: schema" type="3abd1b6a:OraImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\DLTE-Java-Full-Stack-Development\DLTE-Database\DLTE-Oracle-DDL,DML\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="2MSDipxjH6AMqAACobmzC8ayXcL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="oracle" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\DLTE-Java-Full-Stack-Development\DLTE-Database\DLTE-Oracle-DDL,DML" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a99a73fd-9670-4a73-88b2-b5070b33e149" name="Default Changelist" comment="" />
+      <created>1677752219476</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677752219476</updated>
+      <workItem from="1677752221329" duration="765000" />
+      <workItem from="1677756755424" duration="2224000" />
+      <workItem from="1677780338113" duration="105000" />
+      <workItem from="1677939295140" duration="16000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added Screenshot">
+      <created>1677756824688</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677756824688</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added Screenshot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Screenshot" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="233" y="0" key="#SQL_Dialects" timestamp="1677757355586">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state x="233" y="0" key="#SQL_Dialects/0.0.1280.672@0.0.1280.672" timestamp="1677757355586" />
+    <state x="233" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1677756979205">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state x="233" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.672@0.0.1280.672" timestamp="1677756979205" />
+    <state x="151" y="0" key="CommitChangelistDialog2" timestamp="1677939329695">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state x="151" y="0" key="CommitChangelistDialog2/0.0.1280.672@0.0.1280.672" timestamp="1677939329695" />
+    <state x="421" y="93" key="FileChooserDialogImpl" timestamp="1677780434510">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state x="421" y="93" key="FileChooserDialogImpl/0.0.1280.672@0.0.1280.672" timestamp="1677780434510" />
+    <state width="845" height="305" key="GridCell.Tab.0.bottom" timestamp="1677939119838">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state width="845" height="305" key="GridCell.Tab.0.bottom/0.0.1280.672@0.0.1280.672" timestamp="1677939119838" />
+    <state width="845" height="305" key="GridCell.Tab.0.center" timestamp="1677939119838">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state width="845" height="305" key="GridCell.Tab.0.center/0.0.1280.672@0.0.1280.672" timestamp="1677939119838" />
+    <state width="845" height="305" key="GridCell.Tab.0.left" timestamp="1677939119838">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state width="845" height="305" key="GridCell.Tab.0.left/0.0.1280.672@0.0.1280.672" timestamp="1677939119838" />
+    <state width="845" height="305" key="GridCell.Tab.0.right" timestamp="1677939119838">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state width="845" height="305" key="GridCell.Tab.0.right/0.0.1280.672@0.0.1280.672" timestamp="1677939119838" />
+    <state width="198" height="457" key="HiddenNamespacesPopup" timestamp="1677757108911">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state width="198" height="457" key="HiddenNamespacesPopup/0.0.1280.672@0.0.1280.672" timestamp="1677757108911" />
+    <state x="233" y="59" key="Vcs.Push.Dialog.v2" timestamp="1677756833369">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state x="233" y="59" key="Vcs.Push.Dialog.v2/0.0.1280.672@0.0.1280.672" timestamp="1677756833369" />
+    <state x="493" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1677780339674">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state x="493" y="190" key="com.intellij.ide.util.TipDialog/0.0.1280.672@0.0.1280.672" timestamp="1677780339674" />
+    <state x="91" y="33" key="new project wizard" timestamp="1677780440215">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state x="91" y="33" key="new project wizard/0.0.1280.672@0.0.1280.672" timestamp="1677780440215" />
+  </component>
+</project>
