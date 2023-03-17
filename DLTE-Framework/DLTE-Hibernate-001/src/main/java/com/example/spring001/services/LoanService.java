@@ -38,4 +38,8 @@ public class LoanService {
         return loansRepository.findAllByInterestRate(interestRate);
     }
 
+    public List<Loans> implementOfFindAllByRates(Integer min, Integer max){
+        return loansRepository.findAllByRates(min,max);
+    }
+
 }

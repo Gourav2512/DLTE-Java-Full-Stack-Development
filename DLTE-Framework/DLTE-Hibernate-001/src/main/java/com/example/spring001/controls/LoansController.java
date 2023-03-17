@@ -39,5 +39,10 @@ public class LoansController {
         return loansService.implementOfFindAllByInterestRate(interestRate);
     }
 
+    @GetMapping("rates/{min}/{max}")
+    public List<Loans> callingFindAllByRates(@PathVariable("min") Integer min, @PathVariable("max") Integer max){
+        return loansService.implementOfFindAllByRates(min,max);
+    }
+
 
 }
