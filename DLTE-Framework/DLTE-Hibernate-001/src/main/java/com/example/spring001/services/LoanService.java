@@ -1,22 +1,41 @@
 package com.example.spring001.services;
 
-import com.example.spring001.model.Loan;
-import com.example.spring001.remote.LoanRepository;
+import com.example.spring001.model.Loans;
+import com.example.spring001.remote.LoansRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class LoanService {
     @Autowired
-    private LoanRepository loanRepository;
+    private LoansRepository loansRepository;
 
-    public List<Loan> implementationOfFindAll(){
-        return (List<Loan>) loanRepository.findAll();
+    public List<Loans> implementationOfFindAll(){
+        return (List<Loans>) loansRepository.findAll();
     }
 
-    public Loan implementationOfSave(Loan loan){
-        return loanRepository.save(loan);
+
+    public Loans implementationOfSave(Loans loan){
+        return loansRepository.save(loan);
+
     }
+
+    public String implementOfDeleteById(long loanNumber){
+        loansRepository.deleteById(loanNumber);
+        return "Deleted";
+    }
+
+
+
+    public  Optional<Loans> implementOfFindByBorrowerName(String borrowerName){
+        return loansRepository.findByBorrowerName(borrowerName);
+    }
+
+    public  List<Loans> implementOfFindAllByInterestRate(Integer interestRate){
+        return loansRepository.findAllByInterestRate(interestRate);
+    }
+
 }
