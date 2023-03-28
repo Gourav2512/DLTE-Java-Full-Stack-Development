@@ -23,35 +23,40 @@
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%--<c:set var = "id" value ="${param.reg}" />--%>
 <sql:setDataSource var="connection" driver="oracle.jdbc.driver.OracleDriver" url="jdbc:oracle:thin:@localhost:1521:xe" user="GOURAV" password="Gourav22512"/>
-<sql:query var="qry" dataSource="${connection}" >select * from address_new,address_mapper where address_mapper.reg_no=? and address_mapper.add_id=address_new.address_id <sql:param value="${param.reg}"/> </sql:query>
+<sql:query var="qry" dataSource="${connection}">select * from address_new,address_mapper where address_mapper.reg_no=? and address_mapper.add_id=address_new.address_id <sql:param value="${param.reg}"/> </sql:query>
 <div class="container">
-    <div class="card mt-3" >
-        <div class="card-header">
-            Current Address
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <div class="card mt-3" >
+                <div class="card-header bg-success text-light">
+                    Current Address
+                </div>
+                <div class="card-body">
+                    <ul class="card-text">
+                        <li>Door No: ${qry.rows[0].door_no}</li>
+                        <li>Street: ${qry.rows[0].street}</li>
+                        <li>City: ${qry.rows[0].city}</li>
+                        <li>Pincode: ${qry.rows[0].pincode}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="card-body">
-            <ul class="card-text">
-                <li>${qry.rows[0].door_no}</li>
-                <li>${qry.rows[0].street}</li>
-                <li>${qry.rows[0].city}</li>
-                <li>${qry.rows[0].pincode}</li>
-            </ul>
+        <div class="col-lg-6 mb-4">
+            <div class="card mt-3" >
+                <div class="card-header bg-success text-light">
+                    Permanent Address
+                </div>
+                <div class="card-body">
+                    <ul class="card-text">
+                        <li>Door No: ${qry.rows[1].door_no}</li>
+                        <li>Street: ${qry.rows[1].street}</li>
+                        <li>City: ${qry.rows[1].city}</li>
+                        <li>Pincode: ${qry.rows[1].pincode}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-
-<div class="card mt-3" >
-    <div class="card-header">
-        Permanent Address
-    </div>
-    <div class="card-body">
-        <ul class="card-text">
-            <li>${qry.rows[1].door_no}</li>
-            <li>${qry.rows[1].street}</li>
-            <li>${qry.rows[1].city}</li>
-            <li>${qry.rows[1].pincode}</li>
-        </ul>
-    </div>
-</div>
 </div>
 </body>
 </html>

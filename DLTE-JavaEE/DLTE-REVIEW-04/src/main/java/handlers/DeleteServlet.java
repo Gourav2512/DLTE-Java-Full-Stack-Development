@@ -1,5 +1,6 @@
 package handlers;
 
+import dbase.DBOperations;
 import oracle.jdbc.driver.OracleDriver;
 
 import javax.servlet.RequestDispatcher;
@@ -22,18 +23,10 @@ public class DeleteServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+        DBOperations dbOperations = new DBOperations();
         int reg_no = Integer.parseInt(request.getParameter("reg"));
-        try {
-            Driver driver = new OracleDriver();
-            DriverManager.registerDriver(driver);
-            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "GOURAV", "Gourav22512");
-            PreparedStatement preparedStatement = connection.prepareStatement("delete from students where reg_no=?");
-            preparedStatement.setInt(1, reg_no);
-            preparedStatement.executeUpdate();
-            RequestDispatcher dispatcher = request.getRequestDispatcher("display.jsp");
-            dispatcher.forward(request,response);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        dbOperations.deleteDB(reg_no);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("display.jsp");
+        dispatcher.forward(request,response);
     }
 }
