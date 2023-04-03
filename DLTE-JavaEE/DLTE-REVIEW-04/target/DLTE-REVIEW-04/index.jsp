@@ -18,7 +18,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <style>
         body{
-            background-color: black;
+            background-color: #E6E6FA;
         }
         .login-form {
             width: 500px;
@@ -47,6 +47,7 @@
     </style>
 </head>
 <body>
+
 <div class="login-form">
     <form action="authenticate" method="post">
         <h2 class="text-center">Log in</h2>

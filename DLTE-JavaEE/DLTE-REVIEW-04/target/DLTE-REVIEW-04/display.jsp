@@ -15,111 +15,334 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <style>
-        html,
-        body {
-            height: 100%;
-        }
-
-        body {
+        * {
             margin: 0;
-            background: linear-gradient(45deg, #49a09d, #5f2c82);
-            font-family: sans-serif;
-            font-weight: 100;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Inter", Arial, Helvetica, sans-serif;
+            background-color: #E6E6FA;
+        }
+        .formbold-mb-5 {
+            margin-bottom: 10px;
+        }
+        .formbold-pt-3 {
+            padding-top: 12px;
+        }
+        .formbold-main-wrapper, table-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px;
         }
 
-        .container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .formbold-form-wrapper,table {
+            margin: 0 auto;
+            max-width: 1000px;
+            width: 100%;
+
+        }
+        .formbold-form-label {
+            display: block;
+            font-weight: 500;
+            font-size: 16px;
+            color: #07074d;
+            margin-bottom: 12px;
+        }
+        .formbold-form-label-2 {
+            font-weight: 600;
+            font-size: 20px;
+            margin-bottom: 20px;
         }
 
+        .formbold-form-input {
+            width: 100%;
+            padding: 12px 24px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            background: white;
+            font-weight: 500;
+            font-size: 16px;
+            color: #6b7280;
+            outline: none;
+            resize: none;
+        }
+        .formbold-form-input:focus {
+            border-color: #6a64f1;
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .formbold-btn {
+            text-align: center;
+            font-size: 16px;
+            border-radius: 6px;
+            padding: 14px 32px;
+            border: none;
+            font-weight: 600;
+            background-color: #6a64f1;
+            color: white;
+            width: 50%;
+            cursor: pointer;
+        }
+        .formbold-btn:hover {
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .formbold--mx-3 {
+            margin-left: -12px;
+            margin-right: -12px;
+        }
+        .formbold-px-3 {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+        .flex {
+            display: flex;
+        }
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+        .w-full {
+            width: 100%;
+        }
+        @media (min-width: 540px) {
+            .sm\:w-half {
+                width: 50%;
+            }
+        }
         table {
-            width: 800px;
-            border-collapse: collapse;
-            overflow: hidden;
+            /*width: 800px;*/
+            /*border-collapse: collapse;*/
+            /*overflow: hidden;*/
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        .table {
+            margin: auto;
+            width: 80%;
         }
 
-        th,
-        td {
+        th, td {
             padding: 15px;
             background-color: rgba(255,255,255,0.2);
-            color: #fff;
         }
 
         th {
             text-align: left;
-        }
-
-        thead th {
             background-color: #55608f;
         }
-
-
         tbody tr:hover {
-             background-color: rgba(255,255,255,0.3);
-         }
-
-        /*td {*/
-        /*    position: relative;*/
-        /*&:hover {*/
-        /*&:before {*/
-        /*     content: "";*/
-        /*     position: absolute;*/
-        /*     left: 0;*/
-        /*     right: 0;*/
-        /*     top: -9999px;*/
-        /*     bottom: -9999px;*/
-        /*     background-color: rgba(255,255,255,0.2);*/
-        /*     z-index: -1;*/
-        /* }*/
-        /*}*/
-        /*}*/
-        /*}*/
+            background-color: rgba(255,255,255,0.3);
+        }
     </style>
 </head>
 <body>
-<%
-    response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
-    if(session.getAttribute("user")!=null){
-%>
-    <%@ taglib prefix="loan" uri="http://java.sun.com/jsp/jstl/core" %>
-    <%@ taglib prefix="fd" uri="http://java.sun.com/jsp/jstl/sql" %>
-    <fd:setDataSource var="connection" driver="oracle.jdbc.driver.OracleDriver" url="jdbc:oracle:thin:@localhost:1521:xe" user="GOURAV" password="Gourav22512"/>
-    <fd:query var="qry" dataSource="${connection}" sql="select * from students_new" />
-<div class="clearfix">
-    <button class="btn btn-primary float-end me-5 mt-3"><a class="text-decoration-none text-light" href="logout">Logout</a></button>
-</div>
-    <div class="container rounded-4 p-3 mt-5">
+    <script>
+        let dreg;
+        let studentList;
+        function getByIndex(obj, index) {
+            return obj[Object.keys(obj)[index]];
+        }
+        function deleteStudent(reg) {
 
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Register Number</th><th>Name</th><th>Age</th>
-                        <th>Email</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <loan:forEach var="record" items="${qry.rows}">
-                        <tr>
-                            <td>${record.reg_no}</td>
-                            <td>${record.name}</td>
-                            <td>${record.age}</td>
-                            <td>${record.email}</td>
-                            <td><a href="address.jsp?reg=${record.reg_no}" class="btn btn-outline-warning">View Addresses</a></td>
-                            <td><a href="delete?reg=${record.reg_no}" class="btn btn-outline-warning">Delete</a></td>
-                        </tr>
-                    </loan:forEach>
-                    </tbody>
-                </table>
+                $.get( "delete?regNo="+reg, (data)=>{
+                    fetchDetails();
+                });
 
-    <a href="insert.jsp"> <button type="button" class="btn btn-success">Insert</button></a>
+
+        }
+        function fetchDetails(){
+            $.get( "fetch", function( data ) {
+                studentList = data;
+                $(".rows").remove();
+                $.each(studentList,function (studentindex,item) {
+                    $("tbody").append("<tr class='rows'><td>"+item.reg_no+"</td><td>"+item.name+"</td><td>"+item.age+"</td><td>"+item.email+"</td><td></td><td></td><td><button type='button' class='btn btn-danger' onclick=\"deleteStudent("+item.reg_no+")\">Delete</button></td></tr>");
+                    // $.each(getByIndex(item.addresses,0),function (addressindex,address) {
+                    //         $("").append("<td>"+address+"</td>");
+                    // })
+                    // $("div.address1").append("</tr>")
+                })
+            });
+        }
+        $(function () {
+            fetchDetails();
+        });
+        $(document).ready(function(){
+            $("#btn").click(()=>{
+                const regNo=$("input[name=regNo]").val();
+                const name=$("input[name=name]").val();
+                const age=$("input[name=age]").val();
+                const email=$("input[name=email]").val();
+                const cDoor=$("input[name=cDoor]").val();
+                const cStreet=$("input[name=cStreet]").val();
+                const cCity=$("input[name=cCity]").val();
+                const cPincode=$("input[name=cPincode]").val();
+                const pDoor=$("input[name=pDoor]").val();
+                const pStreet=$("input[name=pStreet]").val();
+                const pCity=$("input[name=pCity]").val();
+                const pPincode=$("input[name=pPincode]").val();
+
+
+                $.post("insert",{
+                    "regNo":regNo,
+                    "name":name,
+                    "age":age,
+                    "email":email,
+                    "cDoor":cDoor,
+                    "cStreet":cStreet,
+                    "cCity":cCity,
+                    "cPincode":cPincode,
+                    "pDoor":pDoor,
+                    "pStreet":pStreet,
+                    "pCity":pCity,
+                    "pPincode":pPincode
+                },function(data){
+                    fetchDetails();
+                })
+
+
+                $("input[name=regNo]").val("");
+                $("input[name=name]").val("");
+                $("input[name=age]").val("");
+                $("input[name=email]").val("");
+                $("input[name=cDoor]").val("");
+                $("input[name=cStreet]").val("");
+                $("input[name=cCity]").val("");
+                $("input[name=cPincode]").val("");
+                $("input[name=pDoor]").val("");
+                $("input[name=pStreet]").val("");
+                $("input[name=pCity]").val("");
+                $("input[name=pPincode]").val("");
+
+            })
+
+        });
+    </script>
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+            <form class="rounded-4 shadow-lg p-5">
+                <div class="row">
+                    <div class="col">
+                        <div class="formbold-mb-5 col-sm-12">
+                            <label class="formbold-form-label"> Register Number </label>
+                            <input type="number" name="regNo" placeholder="Register Number" class="formbold-form-input"/>
+                        </div>
+                        <div class="formbold-mb-5 col-sm-12">
+                            <label class="formbold-form-label"> Full Name </label>
+                            <input type="text" name="name" placeholder="Enter your full name" class="formbold-form-input"/>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="formbold-mb-5">
+                            <label class="formbold-form-label"> Age </label>
+                            <input type="number" name="age" placeholder="Enter your age" class="formbold-form-input"/>
+                        </div>
+                        <div class="formbold-mb-5">
+                            <label class="formbold-form-label"> Email Address </label>
+                            <input type="email" name="email" placeholder="Enter your email" class="formbold-form-input"/>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col">
+                        <div class="formbold-mb-5 formbold-pt-3">
+                            <label class="formbold-form-label formbold-form-label-2">
+                                Permanent Address
+                            </label>
+                            <div class="flex flex-wrap formbold--mx-3">
+                                <div class="w-full sm:w-half formbold-px-3">
+                                    <div class="formbold-mb-5">
+                                        <label class="formbold-form-label"> Door No. </label>
+                                        <input type="text" name="pDoor" placeholder="Enter door number" class="formbold-form-input"/>
+                                    </div>
+                                </div>
+                                <div class="w-full sm:w-half formbold-px-3">
+                                    <div class="formbold-mb-5">
+                                        <label class="formbold-form-label"> Street </label>
+                                        <input type="text" name="pStreet" placeholder="Enter street" class="formbold-form-input"/>
+                                    </div>
+                                </div>
+                                <div class="w-full sm:w-half formbold-px-3">
+                                    <div class="formbold-mb-5">
+                                        <label class="formbold-form-label"> City </label>
+                                        <input type="text" name="pCity" placeholder="Enter city" class="formbold-form-input"/>
+                                    </div>
+                                </div>
+                                <div class="w-full sm:w-half formbold-px-3">
+                                    <div class="formbold-mb-5">
+                                        <label class="formbold-form-label"> Pincode </label>
+                                        <input type="number" name="pPincode" placeholder="Enter pincode" class="formbold-form-input"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="formbold-mb-5 formbold-pt-3">
+                            <label class="formbold-form-label formbold-form-label-2">
+                                Current Address
+                            </label>
+                            <div class="flex flex-wrap formbold--mx-3">
+                                <div class="w-full sm:w-half formbold-px-3">
+                                    <div class="formbold-mb-5">
+                                        <label class="formbold-form-label"> Door No. </label>
+                                        <input type="text" name="cDoor" placeholder="Enter door number" class="formbold-form-input"/>
+                                    </div>
+                                </div>
+                                <div class="w-full sm:w-half formbold-px-3">
+                                    <div class="formbold-mb-5">
+                                        <label class="formbold-form-label"> Street </label>
+                                        <input type="text" name="cStreet" placeholder="Enter street" class="formbold-form-input"/>
+                                    </div>
+                                </div>
+                                <div class="w-full sm:w-half formbold-px-3">
+                                    <div class="formbold-mb-5">
+                                        <label class="formbold-form-label"> City </label>
+                                        <input type="text" name="cCity" placeholder="Enter city" class="formbold-form-input"/>
+                                    </div>
+                                </div>
+                                <div class="w-full sm:w-half formbold-px-3">
+                                    <div class="formbold-mb-5">
+                                        <label class="formbold-form-label"> Pincode </label>
+                                        <input type="number" name="cPincode" placeholder="Enter pincode" class="formbold-form-input"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="reset" class="btn btn-danger">Reset</button>
+                    <button type="button" id="btn" class="btn btn-success">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
-<%}
-else{
-    response.sendRedirect("index.jsp");
-}%>
+    <div class="container">
+    <div class="table-wrap mb-5">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead >
+                <tr>
+                    <th>Register Number</th><th>Name</th><th>Age</th>
+                    <th>Email</th><th>Primary Address</th><th>Secondary Address</th><th>Option</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    </div>
 </body>
 </html>
