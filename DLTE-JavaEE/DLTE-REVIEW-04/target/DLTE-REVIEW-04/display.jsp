@@ -159,11 +159,11 @@
                 studentList = data;
                 $(".rows").remove();
                 $.each(studentList,function (studentindex,item) {
-                    $("tbody").append("<tr class='rows'><td>"+item.reg_no+"</td><td>"+item.name+"</td><td>"+item.age+"</td><td>"+item.email+"</td><td></td><td></td><td><button type='button' class='btn btn-danger' onclick=\"deleteStudent("+item.reg_no+")\">Delete</button></td></tr>");
-                    // $.each(getByIndex(item.addresses,0),function (addressindex,address) {
-                    //         $("").append("<td>"+address+"</td>");
-                    // })
-                    // $("div.address1").append("</tr>")
+                    let addresses = "";
+                    $.each(item.addresses, function (addressindex,address) {
+                        addresses += "<td><ul><li>"+address.door_no+"</li><li>"+address.street+"</li><li>"+address.city+"</li><li>"+address.pincode+"</li><ul></td>";
+                    })
+                    $("tbody").append("<tr class='rows'><td>"+item.reg_no+"</td><td>"+item.name+"</td><td>"+item.age+"</td><td>"+item.email+"</td>"+addresses+"<td><button type='button' class='btn btn-danger' onclick=\"deleteStudent("+item.reg_no+")\">Delete</button></td></tr>");
                 })
             });
         }

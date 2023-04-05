@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="762e88f7-d02b-4472-a90b-e0542e504610" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Database/DLTE-Oracle-OCA002-Joins With Foreign Keys/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Database/DLTE-Oracle-OCA002-Joins With Foreign Keys/.idea/DLTE-Oracle-OCA002-Joins With Foreign Keys.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Database/DLTE-Oracle-OCA002-Joins With Foreign Keys/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Database/DLTE-Oracle-OCA002-Joins With Foreign Keys/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Database/DLTE-Oracle-OCA002-Joins With Foreign Keys/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Database/DLTE-Oracle-OCA002-Joins With Foreign Keys/bills.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-TechnicalPresentation/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-TechnicalPresentation/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-TechnicalPresentation/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-TechnicalPresentation/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-TechnicalPresentation/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-TechnicalPresentation/DLTE-JAVA-TechnicalPresentation.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-TechnicalPresentation/src/main/java/org/example/ApexFund.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-TechnicalPresentation/src/main/java/org/example/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-TechnicalPresentation/src/main/java/org/example/FundDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-TechnicalPresentation/src/main/java/org/example/FundEvents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-TechnicalPresentation/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-Java-JV010-GenericsWithStrings/DLTE-Java-JV010-GenericsWithStrings.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-Java-JV011-TransactionCollection/DLTE-Java-JV011-TransactionCollection.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-Java-JV014-CreditCardDash-ConsoleApplication/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-Java-JV014-CreditCardDash-ConsoleApplication/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-Java-JV014-CreditCardDash-ConsoleApplication/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-Java-JV014-CreditCardDash-ConsoleApplication/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-Java-JV014-CreditCardDash-ConsoleApplication/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-Java-JV014-CreditCardDash-ConsoleApplication/DLTE-Java-JV014-CreditCardDash-ConsoleApplication.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-Java-JV014-CreditCardDash-ConsoleApplication/src/main/java/org/ex/abc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-Java-JV014-CreditCardDash-ConsoleApplication/src/main/java/org/example/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-Java-JV014-CreditCardDash-ConsoleApplication/src/main/java/org/example/CreditCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-Java-JV014-CreditCardDash-ConsoleApplication/src/main/java/org/example/CreditEvents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-Java-JV014-CreditCardDash-ConsoleApplication/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/MultipleExceptions.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MultipleExceptions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JAVAEE-001/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JAVAEE-001/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JAVAEE-001/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JAVAEE-001/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JAVAEE-001/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JAVAEE-001/DLTE-JAVAEE-001.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JAVAEE-001/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JAVAEE-001/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Database/DLTE-Oracle-DDL,DML/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Database/DLTE-Oracle-DDL,DML/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Database/DLTE-Oracle-DDL,DML/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Database/DLTE-Oracle-DDL,DML/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Database/DLTE-Oracle-DDL,DML/CreditCard.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Database/DLTE-Oracle-DDL,DML/screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Database/DLTE-Oracle-OCA001/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Database/DLTE-Oracle-OCA001/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-JV001-PersonalLoanCalculator/target/classes/META-INF/DLTE-Java-JV001-PersonalLoanCalculator.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-JV001-PersonalLoanCalculator/target/classes/org/example/PersonLoan.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-JV001-PersonalLoanCalculator/target/classes/org/example/PersonLoan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-JV001-PersonalLoanCalculator/target/test-classes/org/example/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-JV001-PersonalLoanCalculator/target/test-classes/org/example/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-JV002-FindNChargesLessMinimumBalance/target/classes/org/example/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-JV002-FindNChargesLessMinimumBalance/target/classes/org/example/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-JV002-FindNChargesLessMinimumBalance/target/classes/org/example/MinimumBalance.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-JV002-FindNChargesLessMinimumBalance/target/classes/org/example/MinimumBalance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-JV002-FindNChargesLessMinimumBalance/target/test-classes/org/example/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-JV002-FindNChargesLessMinimumBalance/target/test-classes/org/example/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-JV003-ImplementEncapsulation/target/classes/basic/dlte/javapart/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-JV003-ImplementEncapsulation/target/classes/basic/dlte/javapart/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-JV003-ImplementEncapsulation/target/classes/basic/dlte/javapart/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-JV003-ImplementEncapsulation/target/classes/basic/dlte/javapart/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-JV003-ImplementEncapsulation/target/classes/basic/dlte/javapart/Loan.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-JV003-ImplementEncapsulation/target/classes/basic/dlte/javapart/Loan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-JV003-ImplementEncapsulation/target/test-classes/basic/dlte/javapart/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-JV003-ImplementEncapsulation/target/test-classes/basic/dlte/javapart/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-JV004-ConsoleGPay/target/classes/org/example/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-JV004-ConsoleGPay/target/classes/org/example/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-JV004-ConsoleGPay/target/classes/org/example/Gpay.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-JV004-ConsoleGPay/target/classes/org/example/Gpay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Java005-Inheritance/src/main/java/org/example/SmsBanking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Java005-Inheritance/src/main/java/org/example/SmsBanking.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\DLTE-Java-Full-Stack-Development\DLTE-Java\untitled\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="2MfcdGDS6yRQgBlQkm33mDpwioi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DLTE-Java-JV008-ExceptionInAddingNewTrackLoan" />
+  </component>
+  <component name="RunManager">
+    <configuration name="MultipleExceptions" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MultipleExceptions" />
+      <module name="untitled" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MultipleExceptions" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="762e88f7-d02b-4472-a90b-e0542e504610" name="Default Changelist" comment="" />
+      <created>1678162162418</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678162162418</updated>
+      <workItem from="1678162165683" duration="939000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="421" y="93" key="FileChooserDialogImpl" timestamp="1678162510122">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state x="421" y="93" key="FileChooserDialogImpl/0.0.1280.672@0.0.1280.672" timestamp="1678162510122" />
+    <state width="1237" height="161" key="GridCell.Tab.0.bottom" timestamp="1678164795132">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state width="1237" height="161" key="GridCell.Tab.0.bottom/0.0.1280.672@0.0.1280.672" timestamp="1678164795132" />
+    <state width="1237" height="161" key="GridCell.Tab.0.center" timestamp="1678164795132">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state width="1237" height="161" key="GridCell.Tab.0.center/0.0.1280.672@0.0.1280.672" timestamp="1678164795132" />
+    <state width="1237" height="161" key="GridCell.Tab.0.left" timestamp="1678164795132">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state width="1237" height="161" key="GridCell.Tab.0.left/0.0.1280.672@0.0.1280.672" timestamp="1678164795132" />
+    <state width="1237" height="161" key="GridCell.Tab.0.right" timestamp="1678164795132">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state width="1237" height="161" key="GridCell.Tab.0.right/0.0.1280.672@0.0.1280.672" timestamp="1678164795132" />
+  </component>
+</project>

@@ -90,7 +90,7 @@ public class Operations implements StudentEvents {
 
     @Override
     public void displayData() throws SQLException {
-        preparedStatement = con.prepareStatement("select * from students,address where add_id=address_id");
+        preparedStatement = con.prepareStatement("select * from students join address on add_id=address_id");
         ResultSet rs = preparedStatement.executeQuery();
         while (rs.next()){
             System.out.println(rs.getInt("reg_no")+" "+rs.getString("name")+" "+rs.getInt("age")+" "+rs.getString("email")+" "+rs.getString("door_no")+" "+rs.getString("street")+" "+rs.getString("city")+" "+rs.getInt("pincode"));

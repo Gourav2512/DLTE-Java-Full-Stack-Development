@@ -42,9 +42,7 @@ public class InsertServlet extends HttpServlet {
         String pCity = request.getParameter("pCity");
         int pPincode = Integer.parseInt(request.getParameter("pPincode"));
         List<Address> addresses = new ArrayList<>();
-//        addresses.add(new Address(cDoor, cStreet, cCity, cPincode));
-//        addresses.add(new Address(pDoor, pStreet, pCity, pPincode));
-//        Student student = new Student(reg_no,name,age,email,addresses);
+
         addresses.add(new Address(cDoor,cStreet,cCity,cPincode));
         addresses.add(new Address(pDoor,pStreet,pCity,pPincode));
         Student student = new Student(reg_no,name,age,email,addresses);
@@ -58,14 +56,11 @@ public class InsertServlet extends HttpServlet {
         }
 
 
-        logger.log(Level.INFO, "Insertion Successful");
-        PrintWriter pw = response.getWriter();
-        pw.write("Helloooooo");
+
 
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("getttttttttt");
     }
 }

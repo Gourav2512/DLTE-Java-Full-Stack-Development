@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="aa77e007-794b-472a-b6a9-75d912007c3b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/DLTE-Oracle-OCA002-Joins With Foreign Keys.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bills.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV010-GenericsWithStrings/DLTE-Java-JV010-GenericsWithStrings.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV011-TransactionCollection/DLTE-Java-JV011-TransactionCollection.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/DLTE-Java-JV014-CreditCardDash-ConsoleApplication.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/src/main/java/org/ex/abc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/src/main/java/org/example/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/src/main/java/org/example/CreditCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/src/main/java/org/example/CreditEvents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV014-CreditCardDash-ConsoleApplication/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Oracle-DDL,DML/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Oracle-DDL,DML/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Oracle-DDL,DML/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Oracle-DDL,DML/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Oracle-DDL,DML/CreditCard.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Oracle-DDL,DML/screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Oracle-OCA001/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Oracle-OCA001/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV001-PersonalLoanCalculator/target/classes/META-INF/DLTE-Java-JV001-PersonalLoanCalculator.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV001-PersonalLoanCalculator/target/classes/org/example/PersonLoan.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV001-PersonalLoanCalculator/target/classes/org/example/PersonLoan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV001-PersonalLoanCalculator/target/test-classes/org/example/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV001-PersonalLoanCalculator/target/test-classes/org/example/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV002-FindNChargesLessMinimumBalance/target/classes/org/example/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV002-FindNChargesLessMinimumBalance/target/classes/org/example/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV002-FindNChargesLessMinimumBalance/target/classes/org/example/MinimumBalance.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV002-FindNChargesLessMinimumBalance/target/classes/org/example/MinimumBalance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV002-FindNChargesLessMinimumBalance/target/test-classes/org/example/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV002-FindNChargesLessMinimumBalance/target/test-classes/org/example/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV003-ImplementEncapsulation/target/classes/basic/dlte/javapart/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV003-ImplementEncapsulation/target/classes/basic/dlte/javapart/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV003-ImplementEncapsulation/target/classes/basic/dlte/javapart/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV003-ImplementEncapsulation/target/classes/basic/dlte/javapart/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV003-ImplementEncapsulation/target/classes/basic/dlte/javapart/Loan.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV003-ImplementEncapsulation/target/classes/basic/dlte/javapart/Loan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV003-ImplementEncapsulation/target/test-classes/basic/dlte/javapart/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV003-ImplementEncapsulation/target/test-classes/basic/dlte/javapart/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV004-ConsoleGPay/target/classes/org/example/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV004-ConsoleGPay/target/classes/org/example/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV004-ConsoleGPay/target/classes/org/example/Gpay.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-JV004-ConsoleGPay/target/classes/org/example/Gpay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Java005-Inheritance/src/main/java/org/example/SmsBanking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Java005-Inheritance/src/main/java/org/example/SmsBanking.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2MYLgQwq1ER2AAMtFh6Iqd153te" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="C:/Project/Access-Modifiers" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa77e007-794b-472a-b6a9-75d912007c3b" name="Default Changelist" comment="" />
+      <created>1677939679596</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677939679596</updated>
+      <workItem from="1677939681013" duration="1739000" />
+      <workItem from="1678072766250" duration="24000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="421" y="93" key="FileChooserDialogImpl" timestamp="1678072788065">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state x="421" y="93" key="FileChooserDialogImpl/0.0.1280.672@0.0.1280.672" timestamp="1678072788065" />
+    <state x="337" y="162" key="com.intellij.ide.util.TipDialog" timestamp="1678072778115">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state x="337" y="162" key="com.intellij.ide.util.TipDialog/0.0.1280.672@0.0.1280.672" timestamp="1678072778115" />
+  </component>
+</project>
