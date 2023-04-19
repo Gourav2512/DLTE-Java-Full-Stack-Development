@@ -147,18 +147,17 @@
             return obj[Object.keys(obj)[index]];
         }
         function deleteStudent(reg) {
-
                 $.get( "delete?regNo="+reg, (data)=>{
                     fetchDetails();
                 });
-
-
         }
         function fetchDetails(){
             $.get( "fetch", function( data ) {
+                alert(data)
                 studentList = data;
                 $(".rows").remove();
                 $.each(studentList,function (studentindex,item) {
+                    alert(item)
                     let addresses = "";
                     $.each(item.addresses, function (addressindex,address) {
                         addresses += "<td><ul><li>"+address.door_no+"</li><li>"+address.street+"</li><li>"+address.city+"</li><li>"+address.pincode+"</li><ul></td>";

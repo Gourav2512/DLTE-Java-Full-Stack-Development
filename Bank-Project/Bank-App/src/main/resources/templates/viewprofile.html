@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>View Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        /*.tooltip {*/
+        /*    position: relative;*/
+        /*    display: inline-block;*/
+        /*    border-bottom: 1px dotted black;*/
+        /*}*/
+
+        /*.tooltip .tooltiptext {*/
+        /*    visibility: hidden;*/
+        /*    width: 120px;*/
+        /*    background-color: black;*/
+        /*    color: #fff;*/
+        /*    text-align: center;*/
+        /*    border-radius: 6px;*/
+        /*    padding: 5px 0;*/
+        /*    position: absolute;*/
+        /*    z-index: 1;*/
+        /*    top: -5px;*/
+        /*    left: 110%;*/
+        /*}*/
+
+        /*.tooltip .tooltiptext::after {*/
+        /*    content: "";*/
+        /*    position: absolute;*/
+        /*    top: 50%;*/
+        /*    right: 100%;*/
+        /*    margin-top: -5px;*/
+        /*    border-width: 5px;*/
+        /*    border-style: solid;*/
+        /*    border-color: transparent black transparent transparent;*/
+        /*}*/
+        /*.tooltip:hover .tooltiptext {*/
+        /*    visibility: visible;*/
+        /*}*/
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+        .bi-patch-check-fill{
+            color: #00FF00;
+        }
+        .bi-patch-exclamation-fill{
+            color: #F29339;
+        }
+    </style>
+    <script>
+        //let user = sessionStorage.getItem("username");
+        function getUserDetails(username){
+            var soapRequest = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:bank=\"http://bank.project.soap\">\n" +
+                "   <soapenv:Header/>\n" +
+                "   <soapenv:Body>\n" +
+                "      <bank:getCustomerRequest>\n" +
+                "         <bank:username>" + username + "</bank:username>\n" +
+                "      </bank:getCustomerRequest>\n" +
+                "   </soapenv:Body>\n" +
+                "</soapenv:Envelope>";
+            $.ajax({
+                url: "http://localhost:8082/soapservice",
+                type: "POST",
+                dataType: "xml",
+                contentType: "text/xml;charset=\"UTF-8\"",
+                data: soapRequest,
+                success: (data) => {
+                    fullName = $(data).find('ns2\\:customerName').text();
+                    userName = $(data).find('ns2\\:username').text();
+                    address = $(data).find('ns2\\:customerAddress').text();
+                    contact = $(data).find('ns2\\:contact').text();
+                    aadhaar = $(data).find('ns2\\:customerAadhaar').text();
+                    pan = $(data).find('ns2\\:customerPan').text();
+                    status = $(data).find('ns2\\:updateStatus').text();
+
+
+                    $(".name").text(fullName);
+                    $(".user").text("@"+userName)
+                    $(".address").text(address)
+                    $(".contact").text(contact)
+                    $(".aadhaar").text(aadhaar)
+                    $(".pan").text(pan)
+                    if( status == "Verified"){
+                        $("#statusIcon").attr("class","bi bi-patch-check-fill")
+                    }
+                    else {
+                        $("#statusIcon").attr("class","bi bi-patch-exclamation-fill")
+                    }
+
+                    sessionStorage.setItem("username",userName);
+                    sessionStorage.setItem("fullname",fullName);
+                    sessionStorage.setItem("address",address);
+                    sessionStorage.setItem("contact",contact);
+                    sessionStorage.setItem("aadhaar",aadhaar);
+                    sessionStorage.setItem("pan",pan);
+
+                },
+                error:()=>{
+                    alert("error")
+                }
+            });
+        }
+        $(document).ready(()=>{
+            $.ajax({
+                url: "http://localhost:8082/app/username",
+                type: "GET",
+                success:(data) =>{
+                    getUserDetails(data)
+                }
+            })
+
+
+        })
+    </script>
+</head>
+<body>
+<div class="d-flex justify-content-center mt-3 mb-3">
+    <img th:src="@{/images/logo.png}" width="500px" alt="Logo">
+</div>
+<section style="background-color: #eee;">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col">
+                <div class="float-end mb-3">
+                    <a th:href="@{/logout}"><button class="btn btn-danger">Logout</button></a>
+                </div>
+            </div>
+        </div>
+
+                <nav aria-label="breadcrumb" class="bg-primary rounded-3 p-3 mb-4">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item text-light"><a href="#">Dashboard</a></li>
+                        <li class="breadcrumb-item active text-light" aria-current="page">User Profile</li>
+                    </ol>
+                </nav>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                             class="rounded-circle img-fluid" style="width: 150px;">
+                        <h5 class="my-3 name"></h5>
+                        <p class="text-muted mb-1 user me-1" style="display: inline-block"></p><i id="statusIcon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Full Name</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0 name"></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Contact</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0 contact"></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Address</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0 address"></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Aaadhaar Number</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0 aadhaar"></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">PAN</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0 pan"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="float-end">
+            <a th:href="@{/web/update}"><button class="btn btn-primary" type="button">Update Profile</button></a>
+        </div>
+    </div>
+</section>
+<!--<div class="tooltip"><p>Hover over me-->
+<!--</p><span class="tooltiptext">Tooltip text</span>-->
+</div>
+</body>
+</html>
