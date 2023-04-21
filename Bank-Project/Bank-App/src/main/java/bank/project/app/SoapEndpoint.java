@@ -20,14 +20,14 @@ public class SoapEndpoint {
     @Autowired
     BankService bankService;
 
+    //Soap endpoint to view customer details
     @PayloadRoot(namespace = url,localPart = "getCustomerRequest")
     @ResponsePayload
     public GetCustomerResponse getCustomerResponse(@RequestPayload GetCustomerRequest getCustomerRequest){
-        GetCustomerResponse response=new GetCustomerResponse();
-        SoapCustomer soapCustomer = new SoapCustomer();
+        GetCustomerResponse response=new GetCustomerResponse(); //Response object
+        SoapCustomer soapCustomer = new SoapCustomer();  //Soap Class Object
         BeanUtils.copyProperties(bankService.getByUsername(getCustomerRequest.getUsername()),soapCustomer);
         response.setCustomer(soapCustomer);
         return response;
     }
-
 }

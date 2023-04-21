@@ -11,22 +11,22 @@ import java.security.Principal;
 @Controller
 @RequestMapping("/web")
 public class BankController {
+
+    //Login page controller
     @GetMapping("/login")
     public String login()
     {
         return "login";
     }
-    @GetMapping("/dashboard")
-    public String dash()
-    {
-        return "dashboard";
-    }
+
+    //Update Profile page controller
     @GetMapping("/update")
     public String update()
     {
         return "updateprofile";
     }
 
+    //View Profile page controller
     @GetMapping("/view")
     public String view()
     {

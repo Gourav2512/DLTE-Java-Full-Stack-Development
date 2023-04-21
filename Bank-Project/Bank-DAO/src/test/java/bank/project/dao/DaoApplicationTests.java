@@ -31,6 +31,7 @@ class DaoApplicationTests {
     @InjectMocks
     BankService services;
 
+    //Testing getByUsername Method
     @Test
     public void testGetCustomer(){
         Customer c1=new Customer(1234,"Gourav","2-14 Bangalore","Active",8787676565l,"gourav1234","gourav@1234",3,234523452345l,"DFGH1234W","Verified");
@@ -44,18 +45,22 @@ class DaoApplicationTests {
         assertNotEquals(c3,c);
     }
 
+    //Testing updateProfile Method
     @Test
     public void testUpdateProfile(){
         Customer customer=new Customer(1234,"Gourav","2-14 Bangalore","Active",8787676565l,"gourav1234","gourav@1234",3,234523452345l,"DFGH1234W","Verified");
         when(jdbcTemplate.update(eq("update CUSTOMER set CUSTOMER_CONTACT=?, CUSTOMER_ADDRESS=?, CUSTOMER_AADHAAR=?, CUSTOMER_PAN=?, UPDATE_STATUS='Pending' where USERNAME=?"),eq(customer.getContact()),eq(customer.getCustomerAddress()),eq(customer.getCustomerAadhaar()),eq(customer.getCustomerPan()),eq(customer.getUsername()))).thenReturn(1);
         assertEquals(1,services.updateProfile(customer));
+        assertNotEquals(0,services.updateProfile(customer));
     }
 
+    //Testing getAttempts Method
     @Test
     public void testGetAttempts(){
         int id = 1234;
         when(jdbcTemplate.queryForObject(eq("select ATTEMPTS from CUSTOMER where CUSTOMER_ID=?"),eq(Integer.class),eq(id))).thenReturn(3);
         assertEquals(3,services.getAttempts(id));
+        assertNotEquals(1,services.getAttempts(id));
     }
 
 }

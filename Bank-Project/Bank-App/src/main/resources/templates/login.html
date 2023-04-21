@@ -18,6 +18,7 @@
           color: red;
           margin-left:2px
       }
+
     </style>
 </head>
 <body>
@@ -58,7 +59,6 @@
                         </button>
                       </div>
                 </div>
-                
             </div>
             <div class="col-lg-6 col-sm-12">
                 <!-- The login form -->
@@ -66,22 +66,18 @@
                   <form th:action="@{/web/login}" method="post">
                     <div class="mt-3 mb-3">
                       <label class="form-label required-field">Username</label>
-                      <input type="text" class="form-control" name="username" id="id" required>
+                      <input type="text" class="form-control" name="username" id="id"  title="Should only contain alphabets, numbers and the special character(_)" required>
                     </div>
                     <div class="mb-3">
                       <label  class="form-label required-field">Password</label>
                       <input type="password" class="form-control" name="password" id="pass" required>
                     </div>
-
                       <button type="submit" class="btn btn-primary" id="btn">Login</button>
                   </form>
-
                     <div th:if="${param.error != null}">
                         <p class="" th:text="${param.error}"></p>
                     </div>
-
                 </div>
-                
             </div>      
         </div>
         <!-- A marquee displaying the various safety measures  -->

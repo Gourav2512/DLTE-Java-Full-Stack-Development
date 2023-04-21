@@ -22,6 +22,7 @@ public class BankService implements BankOperations, UserDetailsService {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    //Method to get customer using username
     @Override
     public Customer getByUsername(String username) {
         logger.info("Entered getByUserName");
@@ -34,32 +35,36 @@ public class BankService implements BankOperations, UserDetailsService {
         }
     }
 
+    //Method to get the number of attempts customer is left with
     public int getAttempts(int id) {
         int attempts = jdbcTemplate.queryForObject("select ATTEMPTS from CUSTOMER where CUSTOMER_ID=?",Integer.class,id);
         logger.info("Returned Attempts");
         return attempts;
     }
 
-
+    //Method to decrease the number attempts
     public void decrementAttempts(int id) {
         jdbcTemplate.update("update CUSTOMER set ATTEMPTS = ATTEMPTS - 1 where CUSTOMER_ID=?",id);
         logger.info("Decreased the number of attempts");
-        updateStatus();
 
     }
+//    public String getStatus(int id){
+//
+//    }
 
-
-    public void setAttempts(int id) {
+    //Method to  reset the attempts to 3
+    public void resetAttempts(int id) {
         jdbcTemplate.update("update CUSTOMER set ATTEMPTS=3 where CUSTOMER_ID=?",id);
         logger.info("Set attempts to 3");
     }
 
-
-    public void updateStatus() {
-        jdbcTemplate.update("update CUSTOMER set CUSTOMER_STATUS='Inactive' where ATTEMPTS=0");
-        logger.info("Status set to inactive");
+    //Method to set the status to inactive
+    public void setInactive(int id) {
+        jdbcTemplate.update("update CUSTOMER set CUSTOMER_STATUS='Inactive' where CUSTOMER_ID=?",id);
+        logger.info(id+" :Status set to inactive");
     }
 
+    //Method from UserDetailsService
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         logger.info("Entered loadByUserName");
@@ -67,9 +72,13 @@ public class BankService implements BankOperations, UserDetailsService {
         if(customer==null){
             throw new UsernameNotFoundException("User doesn't exist");
         }
+        if(customer.getCustomerStatus().equalsIgnoreCase("Inactive")){
+            throw new UsernameNotFoundException("Your account is deactivated");
+        }
         return customer;
     }
 
+    //Method to update the customer details
     @Override
     public int updateProfile(Customer customer){
         logger.info(customer.toString());
@@ -78,6 +87,7 @@ public class BankService implements BankOperations, UserDetailsService {
         return res;
     }
 
+    //Customer Mapper Class
     static class CustomerMapper implements RowMapper<Customer> {
         @Override
         public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {

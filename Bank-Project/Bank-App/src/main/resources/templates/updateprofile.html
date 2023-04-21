@@ -39,23 +39,38 @@
             color: red;
             margin-left:2px
         }
+        .error{
+            outline: 1px solid red;
+        }
+
+        .allowed-submit{opacity: .5;cursor: not-allowed;}
+        .valid-input{
+            border:1px solid green !important;
+        }
+        .invalid-input{
+            border:1px solid red !important;
+        }
+        .invalid-msg{
+            color: red;
+        }
+
     </style>
 </head>
 <body>
 <script>
 
-    $(document).ready(function () {
-        $("input[name=phone]").val(sessionStorage.getItem("contact"))
-        $("input[name=aadhaar]").val(sessionStorage.getItem("aadhaar"))
-        $("input[name=pan]").val(sessionStorage.getItem("pan"))
-        $("input[name=address]").val(sessionStorage.getItem("address"))
-        userName = sessionStorage.getItem("username")
-        $("#updateBtn").click(function () {
-            let contact = $("input[name=phone]").val()
-            let address = $("input[name=address]").val()
-            let aadhaar = $("input[name=aadhaar]").val()
-            let pan = $("input[name=pan]").val()
-            $.post("http://localhost:8082/app/update",{
+
+    let userName;
+    function updateCustomer(){
+        let contact = $("#phone").val()
+        let address = $("#address").val()
+        let aadhaar = $("#aadhaar").val()
+        let pan = $("#pan").val()
+        if(contact==sessionStorage.getItem("contact") && aadhaar==sessionStorage.getItem("aadhaar") && pan==sessionStorage.getItem("pan") && address==sessionStorage.getItem("address")){
+            alert("No changes were made!")
+        }
+        else {
+            $.post("http://localhost:8082/app/update",{     //Ajax Post method to update the customer details
                 username:userName,
                 contact:contact,
                 address:address,
@@ -70,6 +85,107 @@
                 }
 
             })
+        }
+
+
+    }
+    $(document).ready(function () {
+        //Set the input fields to current customer details
+        $("#fullname").val(sessionStorage.getItem("fullname"))
+        $("#username").val(sessionStorage.getItem("username"))
+        $("#phone").val(sessionStorage.getItem("contact"))
+        $("#aadhaar").val(sessionStorage.getItem("aadhaar"))
+        $("#pan").val(sessionStorage.getItem("pan"))
+        $("#address").val(sessionStorage.getItem("address"))
+        userName = sessionStorage.getItem("username")
+
+        //Contact number validation
+        $('#phone').on('input', function () {
+            console.log("Entered phone validation")
+            var phone = $(this).val();
+            var validNumber = /^[0-9]{10}$/;
+            if (phone.length == 0) {
+                $('.phone-msg').addClass('invalid-msg').text("Contact number is required");
+                $(this).addClass('invalid-input').removeClass('valid-input');
+
+            }
+            else if (!validNumber.test(phone)) {
+                $('.phone-msg').addClass('invalid-msg').text('Should be a 10-digit number');
+                $(this).addClass('invalid-input').removeClass('valid-input');
+
+            }
+            else {
+                $('.phone-msg').empty();
+                $(this).addClass('valid-input').removeClass('invalid-input');
+            }
+        });
+
+        //Aadhaar number validation
+        $('#aadhaar').on('input', function () {
+            var aadhaar = $(this).val();
+            var validAadhaar = /^[0-9]{12}$/;
+            if (aadhaar.length == 0) {
+                $('.aadhaar-msg').addClass('invalid-msg').text("Aadhaar number is required");
+                $(this).addClass('invalid-input').removeClass('valid-input');
+
+            } else if (!validAadhaar.test(aadhaar)) {
+                $('.aadhaar-msg').addClass('invalid-msg').text('Should be a 12-digit number');
+                $(this).addClass('invalid-input').removeClass('valid-input');
+
+            } else {
+                $('.aadhaar-msg').empty();
+                $(this).addClass('valid-input').removeClass('invalid-input');
+            }
+        });
+
+        //PAN number validation
+        $('#pan').on('input', function () {
+            var pan = $(this).val();
+            var validPan = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+            if (pan.length == 0) {
+                $('.pan-msg').addClass('invalid-msg').text("PAN is required");
+                $(this).addClass('invalid-input').removeClass('valid-input');
+
+            } else if (!validPan.test(pan)) {
+                $('.pan-msg').addClass('invalid-msg').text('Invalid Format [Correct Format: ABCDE1234F]');
+                $(this).addClass('invalid-input').removeClass('valid-input');
+
+            } else {
+                $('.pan-msg').empty();
+                $(this).addClass('valid-input').removeClass('invalid-input');
+            }
+        });
+
+        //Address Validation
+        $('#address').on('input', function () {
+            var address = $(this).val();
+            if (address.length == 0) {
+                $('.address-msg').addClass('invalid-msg').text("Address cannot be empty");
+                $(this).addClass('invalid-input').removeClass('valid-input');
+
+            } else {
+                $('.address-msg').empty();
+                $(this).addClass('valid-input').removeClass('invalid-input');
+            }
+        });
+
+        //Input fields event
+        $('input').on('input',function(e){
+            if($('#updateForm').find('.valid-input').length==4){
+                console.log("Entered validation")
+                $('#updateBtn').removeClass('allowed-submit');
+                $('#updateBtn').removeAttr('disabled');
+            }
+            else{
+                e.preventDefault();
+                $('#updateBtn').attr('disabled','disabled')
+
+            }
+        });
+
+        //Update button click event
+        $("#updateBtn").click(function () {
+            updateCustomer();
         })
     })
 </script>
@@ -79,16 +195,18 @@
 
 <section style="background-color: #eee;">
 
-<div class="container py-5">
+<div class="container pb-5">
     <div class="row">
         <div class="col">
-            <div class="float-end mb-3">
+<!--        Logout Button-->
+            <div class="float-end mb-3 mt-3">
                 <a th:href="@{/logout}"><button class="btn btn-danger">Logout</button></a>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col">
+<!--            Navigation Bar-->
             <nav aria-label="breadcrumb" class="bg-primary rounded-3 p-3 mb-4">
                 <ol class="breadcrumb mb-0">
                     <li class="breadcrumb-item text-light"><a href="#">Dashboard</a></li>
@@ -102,43 +220,46 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card h-100">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <h6 class="mb-2 text-primary">Personal Details</h6>
+<!--                    Customer Update Form-->
+                    <form class="row g-3" id="updateForm">
+                        <div class="col-md-7">
+                            <label class="form-label">Full name</label>
+                            <input type="text" class="form-control" name="fullname" id="fullname" disabled readonly>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label class="required-field">Contact</label>
-                                <input type="text" class="form-control" name="phone" placeholder="Enter phone number">
+                        <div class="col-md-5">
+                            <label  class="form-label">Username</label>
+                            <div class="input-group">
+                                <span class="input-group-text" >@</span>
+                                <input type="text" class="form-control" name="username" id="username" aria-describedby="inputGroupPrepend2" disabled readonly>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label class="required-field">Address</label>
-                                <input type="text" class="form-control" name="address" placeholder="Enter address">
-                            </div>
+                        <div class="col-md-4">
+                            <label  class="form-label">Contact</label>
+                            <input type="text" class="form-control valid-input" name="phone" id="phone" placeholder="Enter phone number" >
+                            <small class="phone-msg"></small>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label class="required-field">Aaadhaar Number</label>
-                                <input type="text" class="form-control" name="aadhaar" placeholder="Enter aadhaar number">
-                            </div>
+                        <div class="col-md-8">
+                            <label  class="form-label">Address</label>
+                            <input type="text" class="form-control valid-input"  name="address" id="address" placeholder="Enter address">
+                            <small class="address-msg"></small>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label class="required-field">PAN</label>
-                                <input type="text" class="form-control" name="pan" placeholder="Enter PAN">
-                            </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Aadhaar</label>
+                            <input type="text" class="form-control valid-input" name="aadhaar" id="aadhaar" placeholder="Enter aadhaar number" >
+                            <small class="aadhaar-msg"></small>
                         </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="col-6">
+                            <label  class="form-label">PAN</label>
+                            <input type="text" class="form-control valid-input" name="pan" id="pan" placeholder="Enter PAN" >
+                            <small class="pan-msg"></small>
+                        </div>
+                        <div class="col-12">
                             <div class="text-right">
                                 <a th:href="@{/web/view}"><button type="button"  class="btn btn-secondary">Cancel</button></a>
-                                <button type="button" id="updateBtn" class="btn btn-primary">Update</button>
+                                <button type="button" id="updateBtn"  class="btn btn-primary">Update</button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

@@ -17,18 +17,14 @@ import java.util.ResourceBundle;
 public class LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
     @Autowired
     BankService bankService;
+
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
+        //Getting customer object with username
         Customer customer = (Customer) authentication.getPrincipal();
         ResourceBundle bundle = ResourceBundle.getBundle("messages");
-        if(customer.getAttempts()==0){
-            logger.info(bundle.getString("inactive"));
-            super.setDefaultTargetUrl("@{/web/login}");
-        }
-        else{
-            bankService.updateStatus();
-            super.setDefaultTargetUrl("/web/view");
-        }
+        bankService.resetAttempts(customer.getCustomerId());
+        super.setDefaultTargetUrl("/web/view");
         super.onAuthenticationSuccess(request, response, authentication);
     }
 }
