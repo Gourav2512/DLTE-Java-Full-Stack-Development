@@ -64,7 +64,7 @@
                 "      </bank:getCustomerRequest>\n" +
                 "   </soapenv:Body>\n" +
                 "</soapenv:Envelope>";
-            $.ajax({
+            $.ajax({                                            //Ajax post method to get user details
                 url: "http://localhost:8082/soapservice",
                 type: "POST",
                 dataType: "xml",
@@ -86,6 +86,8 @@
                     $(".contact").text(contact)
                     $(".aadhaar").text(aadhaar)
                     $(".pan").text(pan)
+
+                    //Update status icon
                     if( status == "Verified"){
                         $("#statusIcon").attr("class","bi bi-patch-check-fill")
                     }
@@ -93,6 +95,7 @@
                         $("#statusIcon").attr("class","bi bi-patch-exclamation-fill")
                     }
 
+                    //Storing values for the update page
                     sessionStorage.setItem("username",userName);
                     sessionStorage.setItem("fullname",fullName);
                     sessionStorage.setItem("address",address);
@@ -107,6 +110,7 @@
             });
         }
         $(document).ready(()=>{
+            //Ajax get method to get logged in user's username
             $.ajax({
                 url: "http://localhost:8082/app/username",
                 type: "GET",
@@ -120,6 +124,7 @@
     </script>
 </head>
 <body>
+<!--Bank logo-->
 <div class="d-flex justify-content-center mt-3 mb-3">
     <img th:src="@{/images/logo.png}" width="500px" alt="Logo">
 </div>
@@ -127,12 +132,13 @@
     <div class="container pb-5">
         <div class="row">
             <div class="col">
+<!--                Logout Button-->
                 <div class="float-end mb-3 mt-3">
                     <a th:href="@{/logout}"><button class="btn btn-danger">Logout</button></a>
                 </div>
             </div>
         </div>
-
+<!--            Navigation Bar-->
                 <nav aria-label="breadcrumb" class="bg-primary rounded-3 p-3 mb-4">
                     <ol class="breadcrumb mb-0">
                         <li class="breadcrumb-item text-light"><a href="#">Dashboard</a></li>
@@ -143,6 +149,7 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="card mb-4">
+<!--                    Customer image and info card-->
                     <div class="card-body text-center">
                         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
                              class="rounded-circle img-fluid" style="width: 150px;">
@@ -153,6 +160,7 @@
             </div>
             <div class="col-lg-8">
                 <div class="card mb-4">
+<!--                    Customer details card-->
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-3">
@@ -202,13 +210,12 @@
                 </div>
             </div>
         </div>
+<!--        Update Button-->
         <div class="float-end">
             <a th:href="@{/web/update}"><button class="btn btn-primary" type="button">Update Profile</button></a>
         </div>
     </div>
 </section>
-<!--<div class="tooltip"><p>Hover over me-->
-<!--</p><span class="tooltiptext">Tooltip text</span>-->
 </div>
 </body>
 </html>
