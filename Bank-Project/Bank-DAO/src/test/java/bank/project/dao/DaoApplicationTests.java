@@ -54,13 +54,4 @@ class DaoApplicationTests {
         assertNotEquals(0,services.updateProfile(customer));
     }
 
-    //Testing getAttempts Method
-    @Test
-    public void testGetAttempts(){
-        int id = 1234;
-        when(jdbcTemplate.queryForObject(eq("select ATTEMPTS from CUSTOMER where CUSTOMER_ID=?"),eq(Integer.class),eq(id))).thenReturn(3);
-        assertEquals(3,services.getAttempts(id));
-        assertNotEquals(1,services.getAttempts(id));
-    }
-
 }

@@ -24,6 +24,8 @@ public class LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
         Customer customer = (Customer) authentication.getPrincipal();
         ResourceBundle bundle = ResourceBundle.getBundle("messages");
         bankService.resetAttempts(customer.getCustomerId());
+        logger.info("Login Successful");
+        logger.info("Attempts rest for "+customer.getUsername());
         super.setDefaultTargetUrl("/web/view");
         super.onAuthenticationSuccess(request, response, authentication);
     }

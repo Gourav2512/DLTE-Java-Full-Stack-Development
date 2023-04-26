@@ -54,9 +54,26 @@
             color: red;
         }
 
+        .gradient-custom {
+            /* fallback for old browsers */
+            background: #a1c4fd;
+
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to right, rgba(161,196,253,0.5), rgba(194,233,251,0.5));
+
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right, rgba(161,196,253,0.5), rgba(194,233,251,0.5))
+        }
+        .center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
     </style>
 </head>
-<body>
+<body class="gradient-custom">
 <script>
 
 
@@ -67,24 +84,12 @@
         let aadhaar = $("#aadhaar").val()
         let pan = $("#pan").val()
         if(contact==sessionStorage.getItem("contact") && aadhaar==sessionStorage.getItem("aadhaar") && pan==sessionStorage.getItem("pan") && address==sessionStorage.getItem("address")){
-            alert("No changes were made!")
+            $("#noChanges").modal("show")
+
         }
         else {
-            $.post("http://localhost:8082/app/update",{     //Ajax Post method to update the customer details
-                username:userName,
-                contact:contact,
-                address:address,
-                aadhaar:aadhaar,
-                pan:pan
-            },function (response) {
-                if(response>0){
-                    alert("Updated")
-                    window.location.href = "http://localhost:8082/web/view"
-                }else {
-                    alert("Something went wrong!")
-                }
+            $("#updateConfirmation").modal("show")
 
-            })
         }
 
 
@@ -183,17 +188,142 @@
             }
         });
 
+        $("#updateBtn").click(function () {
+            $("#modalContact").text(": "+$("#phone").val())
+            $("#modalAddress").text(": "+$("#address").val())
+            $("#modalAadhaar").text(": "+$("#aadhaar").val())
+            $("#modalPan").text(": "+$("#pan").val())
+        })
+
         //Update button click event
         $("#updateBtn").click(function () {
             updateCustomer();
         })
+
+        $("#profileBtn").click(function () {
+            window.location.href = "http://localhost:8082/web/view"
+        })
+
+
+
+        $("#proceedBtn").click(function () {
+            let contact = $("#phone").val()
+            let address = $("#address").val()
+            let aadhaar = $("#aadhaar").val()
+            let pan = $("#pan").val()
+            $.post("http://localhost:8082/app/update",{     //Ajax Post method to update the customer details
+                username:userName,
+                contact:contact,
+                address:address,
+                aadhaar:aadhaar,
+                pan:pan
+            },function (response) {
+                if(response>0)
+                    $("#confirmationMessage").modal("show")
+                else
+                    $("#errorMessage").modal("show")
+            })
+        })
     })
 </script>
+
+<!--Update Confirmation Modal -->
+<div class="modal fade" id="updateConfirmation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Update Confirmation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6>Proceed with the following changes?</h6>
+                <div class="row">
+                    <div class="col-4">Contact</div>
+                    <div class="col-8 text-secondary" id="modalContact"></div>
+                </div>
+                <div class="row">
+                    <div class="col-4">Address</div>
+                    <div class="col-8 text-secondary" id="modalAddress"></div>
+                </div>
+                <div class="row">
+                    <div class="col-4">Aadhaar</div>
+                    <div class="col-8 text-secondary" id="modalAadhaar"></div>
+                </div>
+                <div class="row">
+                    <div class="col-4">PAN</div>
+                    <div class="col-8 text-secondary" id="modalPan"></div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="proceedBtn" data-bs-toggle="modal" >Proceed</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Update Confirmed Modal -->
+<div class="modal fade" id="confirmationMessage" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="confirmationMessageLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmationMessageLabel">Update Request</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Request has been sent to the admin. It'll take some time for the details to get verified.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="profileBtn"  >Okay</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Error Message Modal-->
+<div class="modal fade" id="errorMessage" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="errorMessageLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="errorMessageLabel">Update Error</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Something went wrong. Please try again after some time.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="errorBtn" data-bs-toggle="modal" >Okay</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--No changes made Modal-->
+<div class="modal fade" id="noChanges" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="noChangesLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noChangesLabel">No Changes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                No changes were made
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="noChangeBtn" data-bs-toggle="modal" >Okay</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="d-flex justify-content-center mt-3 mb-3">
     <img th:src="@{/images/logo.png}" width="500px" alt="Logo">
 </div>
 
-<section style="background-color: #eee;">
+
 
 <div class="container pb-5">
     <div class="row">
@@ -207,10 +337,12 @@
     <div class="row">
         <div class="col">
 <!--            Navigation Bar-->
-            <nav aria-label="breadcrumb" class="bg-primary rounded-3 p-3 mb-4">
+            <nav aria-label="breadcrumb" class="rounded-3 p-3 mb-4 text-light" style="background-color: #001F3F">
                 <ol class="breadcrumb mb-0">
                     <li class="breadcrumb-item text-light"><a href="#">Dashboard</a></li>
+                    <li class="breadcrumb-item ">/</li>
                     <li class="breadcrumb-item text-light"><a th:href="@{/web/view}">User Profile</a></li>
+                    <li class="breadcrumb-item ">/</li>
                     <li class="breadcrumb-item active text-light" aria-current="page">Update Profile</li>
                 </ol>
             </nav>
@@ -235,7 +367,10 @@
                         </div>
                         <div class="col-md-4">
                             <label  class="form-label">Contact</label>
-                            <input type="text" class="form-control valid-input" name="phone" id="phone" placeholder="Enter phone number" >
+                            <div class="input-group">
+                                <span class="input-group-text">+91</span>
+                                <input type="text" class="form-control valid-input" name="phone" id="phone" placeholder="Enter phone number" >
+                            </div>
                             <small class="phone-msg"></small>
                         </div>
                         <div class="col-md-8">
@@ -265,6 +400,5 @@
         </div>
     </div>
 </div>
-</section>
 </body>
 </html>

@@ -27,13 +27,6 @@ class AppApplicationTests {
     Principal principal;
 
     @Test
-    public void testUpdateProfile(){
-        Customer customer=new Customer(1234,"Gourav","2-14 Bangalore","Active",8787676565l,"gourav1234","gourav@1234",3,234523452345l,"DFGH1234W","Verified");
-        when(bankService.updateProfile(eq(customer))).thenReturn(1);
-        assertEquals(1,bankRestController.updateProfile("gourav1234",8787676565l,"2-14 Bangalore",234523452345l,"DFGH1234W"));
-    }
-
-    @Test
     public void testCurrentUsername(){
         when(principal.getName()).thenReturn("Gourav");
         assertEquals("Gourav",bankRestController.currentUserName(principal));

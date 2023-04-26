@@ -31,21 +31,21 @@ public class LoginFailureHandler extends SimpleUrlAuthenticationFailureHandler {
                 //Getting the number of attempts the user is left with
                 int attempts = bankService.getAttempts(customer.getCustomerId());
                 if(attempts==2){
-                    logger.info(bundle.getString("inPass")+bundle.getString("attempt1"));
+                    logger.info(userName+": "+bundle.getString("inPass")+bundle.getString("attempt1"));
                     super.setDefaultFailureUrl("/web/login?error=" + bundle.getString("inPass")+bundle.getString("attempt1"));
                 }
                 else if(attempts==1){
-                    logger.info(bundle.getString("inPass")+bundle.getString("attempt2"));
+                    logger.info(userName+": "+bundle.getString("inPass")+bundle.getString("attempt2"));
                     super.setDefaultFailureUrl("/web/login?error=" + bundle.getString("inPass")+bundle.getString("attempt2"));
                 }
                 else {
                     bankService.setInactive(customer.getCustomerId());
-                    logger.info(bundle.getString("inactive"));
-                    super.setDefaultFailureUrl("/web/login?error=" + bundle.getString("inactive"));
+                    logger.info(userName+": "+bundle.getString("inPass")+bundle.getString("inactive"));
+                    super.setDefaultFailureUrl("/web/login?error=" +bundle.getString("inPass")+ bundle.getString("inactive"));
 
                 }
             }else {
-                logger.info(bundle.getString("inactive"));
+                logger.info(userName+": "+bundle.getString("inactive"));
                 super.setDefaultFailureUrl("/web/login?error=" + bundle.getString("inactive"));  //User is inactive
             }
         }

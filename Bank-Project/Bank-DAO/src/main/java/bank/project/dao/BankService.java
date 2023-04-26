@@ -19,18 +19,21 @@ public class BankService implements BankOperations, UserDetailsService {
 
     Logger logger = LoggerFactory.getLogger(BankService.class);
 
+
+
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
     //Method to get customer using username
     @Override
     public Customer getByUsername(String username) {
-        logger.info("Entered getByUserName");
+        logger.info("Entered getByUserName: "+username);
         try{
             Customer customer = jdbcTemplate.queryForObject("select * from CUSTOMER where USERNAME=?",new CustomerMapper(),username);
+            logger.info("Retrieved customer: "+customer);
             return customer;
         } catch (Exception e) {
-            logger.info("Exception occured:",e);
+            logger.info("Invalid Username");
             return null;
         }
     }
@@ -38,14 +41,14 @@ public class BankService implements BankOperations, UserDetailsService {
     //Method to get the number of attempts customer is left with
     public int getAttempts(int id) {
         int attempts = jdbcTemplate.queryForObject("select ATTEMPTS from CUSTOMER where CUSTOMER_ID=?",Integer.class,id);
-        logger.info("Returned Attempts");
+        logger.info("Returned Attempts:"+attempts+"for "+id);
         return attempts;
     }
 
     //Method to decrease the number attempts
     public void decrementAttempts(int id) {
         jdbcTemplate.update("update CUSTOMER set ATTEMPTS = ATTEMPTS - 1 where CUSTOMER_ID=?",id);
-        logger.info("Decreased the number of attempts");
+        logger.info("Decreased the number of attempts for" +id);
 
     }
 //    public String getStatus(int id){
@@ -55,7 +58,7 @@ public class BankService implements BankOperations, UserDetailsService {
     //Method to  reset the attempts to 3
     public void resetAttempts(int id) {
         jdbcTemplate.update("update CUSTOMER set ATTEMPTS=3 where CUSTOMER_ID=?",id);
-        logger.info("Set attempts to 3");
+        logger.info("Set attempts to 3 for "+id);
     }
 
     //Method to set the status to inactive
@@ -67,7 +70,6 @@ public class BankService implements BankOperations, UserDetailsService {
     //Method from UserDetailsService
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        logger.info("Entered loadByUserName");
         Customer customer= getByUsername(username);
         if(customer==null){
             throw new UsernameNotFoundException("User doesn't exist");
@@ -83,7 +85,12 @@ public class BankService implements BankOperations, UserDetailsService {
     public int updateProfile(Customer customer){
         logger.info(customer.toString());
         int res = jdbcTemplate.update("update CUSTOMER set CUSTOMER_CONTACT=?, CUSTOMER_ADDRESS=?, CUSTOMER_AADHAAR=?, CUSTOMER_PAN=?, UPDATE_STATUS='Pending' where USERNAME=?",customer.getContact(),customer.getCustomerAddress(),customer.getCustomerAadhaar(),customer.getCustomerPan(),customer.getUsername());
-        logger.info("Update Status: "+res);
+        if(res>0){
+            logger.info("Update successful, returned "+res);
+        }
+        else {
+            logger.info("Update declined, returned "+res);
+        }
         return res;
     }
 

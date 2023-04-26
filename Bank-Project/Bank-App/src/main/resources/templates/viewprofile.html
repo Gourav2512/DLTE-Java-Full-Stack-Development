@@ -9,39 +9,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <style>
-        /*.tooltip {*/
-        /*    position: relative;*/
-        /*    display: inline-block;*/
-        /*    border-bottom: 1px dotted black;*/
-        /*}*/
 
-        /*.tooltip .tooltiptext {*/
-        /*    visibility: hidden;*/
-        /*    width: 120px;*/
-        /*    background-color: black;*/
-        /*    color: #fff;*/
-        /*    text-align: center;*/
-        /*    border-radius: 6px;*/
-        /*    padding: 5px 0;*/
-        /*    position: absolute;*/
-        /*    z-index: 1;*/
-        /*    top: -5px;*/
-        /*    left: 110%;*/
-        /*}*/
-
-        /*.tooltip .tooltiptext::after {*/
-        /*    content: "";*/
-        /*    position: absolute;*/
-        /*    top: 50%;*/
-        /*    right: 100%;*/
-        /*    margin-top: -5px;*/
-        /*    border-width: 5px;*/
-        /*    border-style: solid;*/
-        /*    border-color: transparent black transparent transparent;*/
-        /*}*/
-        /*.tooltip:hover .tooltiptext {*/
-        /*    visibility: visible;*/
-        /*}*/
         a {
             color: inherit;
             text-decoration: inherit;
@@ -52,9 +20,13 @@
         .bi-patch-exclamation-fill{
             color: #F29339;
         }
+        .gradient-custom {
+            background: -webkit-linear-gradient(to right, rgba(161,196,253,0.5), rgba(194,233,251,0.5));
+            background: linear-gradient(to right, rgba(161,196,253,0.5), rgba(194,233,251,0.5))
+        }
     </style>
     <script>
-        //let user = sessionStorage.getItem("username");
+
         function getUserDetails(username){
             var soapRequest = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:bank=\"http://bank.project.soap\">\n" +
                 "   <soapenv:Header/>\n" +
@@ -90,9 +62,11 @@
                     //Update status icon
                     if( status == "Verified"){
                         $("#statusIcon").attr("class","bi bi-patch-check-fill")
+                        $("#statusIcon").text("Verified")
                     }
                     else {
                         $("#statusIcon").attr("class","bi bi-patch-exclamation-fill")
+                        $("#statusIcon").text("Verification Pending")
                     }
 
                     //Storing values for the update page
@@ -123,12 +97,15 @@
         })
     </script>
 </head>
-<body>
+<body class="gradient-custom">
 <!--Bank logo-->
 <div class="d-flex justify-content-center mt-3 mb-3">
     <img th:src="@{/images/logo.png}" width="500px" alt="Logo">
 </div>
-<section style="background-color: #eee;">
+<!--<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">-->
+<!--    Tooltip on right-->
+<!--</button>-->
+
     <div class="container pb-5">
         <div class="row">
             <div class="col">
@@ -139,22 +116,26 @@
             </div>
         </div>
 <!--            Navigation Bar-->
-                <nav aria-label="breadcrumb" class="bg-primary rounded-3 p-3 mb-4">
+                <nav aria-label="breadcrumb" class="rounded-3 p-3 mb-4 text-light" style="background-color: #001F3F">
                     <ol class="breadcrumb mb-0">
                         <li class="breadcrumb-item text-light"><a href="#">Dashboard</a></li>
+                        <li class="breadcrumb-item ">/</li>
                         <li class="breadcrumb-item active text-light" aria-current="page">User Profile</li>
                     </ol>
                 </nav>
 
         <div class="row">
             <div class="col-lg-4">
-                <div class="card mb-4">
+                <div class="card mb-4 bg-opacity-25">
 <!--                    Customer image and info card-->
                     <div class="card-body text-center">
                         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
                              class="rounded-circle img-fluid" style="width: 150px;">
                         <h5 class="my-3 name"></h5>
-                        <p class="text-muted mb-1 user me-1" style="display: inline-block"></p><i id="statusIcon"></i>
+                        <p class="text-muted mb-1 user me-1" style="display: inline-block"></p>
+                        <div>
+                            <i id="statusIcon"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -215,7 +196,5 @@
             <a th:href="@{/web/update}"><button class="btn btn-primary" type="button">Update Profile</button></a>
         </div>
     </div>
-</section>
-</div>
 </body>
 </html>

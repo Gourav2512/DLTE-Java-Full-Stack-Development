@@ -27,46 +27,54 @@
       .invalid-msg{
           color: red;
       }
+      .gradient-custom {
+          background: -webkit-linear-gradient(to right, rgba(161,196,253,0.5), rgba(194,233,251,0.5));
+          background: linear-gradient(to right, rgba(161,196,253,0.5), rgba(194,233,251,0.5))
+      }
 
     </style>
 </head>
-<body>
+<body class="gradient-custom">
 <script>
-    // $(document).ready(()=> {
-    //     $('#user').on('input', function () {
-    //         var username = $(this).val();
-    //         var validUserName = /^[a-z]{3,}$/;
-    //         if (username.length === 0) {
-    //             $('.user-msg').addClass('invalid-msg').text("Username is required");
-    //             $(this).addClass('invalid-input').removeClass('valid-input');
-    //
-    //         } else if (!validUserName.test(username)) {
-    //             $('.user-msg').addClass('invalid-msg').text('username must atleast 4 characters!!');
-    //             $(this).addClass('invalid-input').removeClass('valid-input');
-    //
-    //         } else {
-    //             $('.user-msg').empty();
-    //             $(this).addClass('valid-input').removeClass('invalid-input');
-    //         }
-    //     });
-    //     $('#pass').on('input', function () {
-    //         console.log("Entered the valid password");
-    //         var password = $(this).val();
-    //         var validPassword = /^[a-z]{4,}[0-9]{3}$/;
-    //         if (password.length === 0) {
-    //             $('.pass-msg').addClass('invalid-msg').text("username is required!!");
-    //             $(this).addClass('invalid-input').removeClass('valid-input');
-    //
-    //         } else if (!validPassword.test(password)) {
-    //             $('.pass-msg').addClass('invalid-msg').text('password must contain atleast 4 characters and 3 numbers!!');
-    //             $(this).addClass('invalid-input').removeClass('valid-input');
-    //
-    //         } else {
-    //             $('.pass-msg').empty();
-    //             $(this).addClass('valid-input').removeClass('invalid-input');
-    //         }
-    //     });
-    // })
+    $(document).ready(()=> {
+        $('#user').on('input', function () {
+            var username = $(this).val();
+            var validUserName = /^[A-Za-z0-9_]+$/;
+            if(username.length == 0){
+                $('.user-msg').addClass('invalid-msg').text("Cannot be empty");
+                $(this).addClass('invalid-input').removeClass('valid-input');
+            }
+            else if (!validUserName.test(username)) {
+                $('.user-msg').addClass('invalid-msg').text('Can only contain alphabets, numbers and special character(_)');
+                $(this).addClass('invalid-input').removeClass('valid-input');
+            }
+            else if (username.length < 3) {
+                $('.user-msg').addClass('invalid-msg').text("Minimum 3 characters");
+                $(this).addClass('invalid-input').removeClass('valid-input');
+
+            } else {
+                $('.user-msg').empty();
+                $(this).addClass('valid-input').removeClass('invalid-input');
+            }
+        });
+        $('#pass').on('input', function () {
+            console.log("Entered the valid password");
+            var password = $(this).val();
+           // var validPassword = /^[a-z]{4,}[0-9]{3}$/;
+            if(password.length==0){
+                $('.pass-msg').addClass('invalid-msg').text("Cannot be empty");
+                $(this).addClass('invalid-input').removeClass('valid-input');
+            }
+            else if (password.length < 8) {
+                $('.pass-msg').addClass('invalid-msg').text("Minimum 8 characters");
+                $(this).addClass('invalid-input').removeClass('valid-input');
+
+            } else {
+                $('.pass-msg').empty();
+                $(this).addClass('valid-input').removeClass('invalid-input');
+            }
+        });
+    })
 </script>
     <!-- The bank logo -->
     <div class="d-flex justify-content-center mt-3">
@@ -74,7 +82,7 @@
     </div>
     <!-- A marquee displaying some guidline -->
     <div class="justify-content-center d-flex">
-        <marquee class="bg-light w-75 m-3" direction="left">Never share your account details such as account number, login ID, password,
+        <marquee class="bg-light w-75 m-3 bg-opacity-50 rounded-1" direction="left">Never share your account details such as account number, login ID, password,
             PIN, UPI-PIN, OTP, ATM / Debit card / credit card details with anyone, not even
             with bank officials, however genuine they might sound.</marquee>
     </div>
@@ -108,26 +116,31 @@
             </div>
             <div class="col-lg-6 col-sm-12">
                 <!-- The login form -->
-                <div class="card p-2 mt-2 bg-light">
-                  <form th:action="@{/web/login}" method="post">
+                <div class="card mt-2 p-2 bg-light bg-opacity-25">
+                    <div class="d-flex align-items-center text-light rounded-1 justify-content-center"  style="background-color: #001F3F; height:40px">
+                        <h5>USER LOGIN</h5>
+                    </div>
+                  <form th:action="@{/web/login}"  method="post">
                     <div class="mt-3 mb-3">
                       <label class="form-label required-field">Username</label>
-                      <input type="text" class="form-control" name="username" id="user"  title="Should only contain alphabets, numbers and the special character(_)" required>
+                      <input type="text" class="form-control" name="username" id="user" placeholder="Enter Username" maxlength="20" required>
+                        <small class="user-msg"></small>
                     </div>
                     <div class="mb-3">
                       <label  class="form-label required-field">Password</label>
-                      <input type="password" class="form-control" name="password" id="pass" required>
+                      <input type="password" class="form-control" name="password" id="pass" placeholder="Enter Password" maxlength="15" required>
+                        <small class="pass-msg"></small>
                     </div>
-                      <button type="submit" class="btn btn-primary" id="btn">Login</button>
+                      <button type="submit" class="btn-block btn btn-primary" id="btn">Login</button>
                   </form>
-                    <div th:if="${param.error != null}">
-                        <p class="text-danger" th:text="${param.error}"></p>
+                    <div class="bg-danger-subtle rounded-1 mt-2 p-1 text-danger text-center" th:if="${param.error != null}" th:text="${param.error}">
+
                     </div>
                 </div>
             </div>      
         </div>
         <!-- A marquee displaying the various safety measures  -->
-        <div class="card bg-light mt-3 d-flex">
+        <div class="card bg-light mt-3 d-flex bg-opacity-50">
             <p class="d-flex fs-5 bg-info justify-content-center">SAFE DIGITAL BANKING PRACTICES</p>
             <marquee width="100%" direction="up" height="40%">
                 <ul>

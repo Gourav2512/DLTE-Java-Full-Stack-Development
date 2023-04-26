@@ -31,7 +31,7 @@ public class BankRestController {
     //Update customer details
     @PostMapping("/update")
     public int updateProfile(@RequestParam("username") String customerUsername, @RequestParam("contact") long customerContact, @RequestParam("address") String customerAddress, @RequestParam("aadhaar") long customerAadhaar, @RequestParam("pan") String customerPan ){
-        logger.info("Entered Update...");
+        logger.info("Recieved update request "+customerUsername);
         Customer customer = new Customer();
         customer.setUsername(customerUsername);
         customer.setContact(customerContact);
